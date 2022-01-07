@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         listCities.add(Cities("Москва", "Российская Федерация"))
         listCities.add(Cities("Екатеринбург", "Российская Федерация"))
         listCities.add(Cities("Токио", "Япония"))
+        listCities.add(Cities("Сеул", "Республика Корея"))
 
         val buttonSettings: Button = findViewById(R.id.button_settings)
         buttonSettings.setOnClickListener {
