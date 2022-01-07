@@ -2,10 +2,8 @@ package com.example.start_for_kotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import com.example.start_for_kotlin.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,10 +11,27 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val textView: TextView = findViewById(R.id.textView_1)
+        val listCities = arrayListOf<Cities>()
+        listCities.add(Cities("Москва", "Российская Федерация"))
+        listCities.add(Cities("Екатеринбург", "Российская Федерация"))
+        listCities.add(Cities("Токио", "Япония"))
 
         val buttonSettings: Button = findViewById(R.id.button_settings)
         buttonSettings.setOnClickListener {
-            textView.text = "Click!"
+            val message: String = "Город " + listCities.get(0).nameCity + " находится в стране " + listCities.get(0).country
+            textView.text = message
+            println(CopyCity.copyCity)
+            for (city in listCities){
+                print(city.country + " ")
+                println(city.nameCity)
+            }
         }
     }
+}
+
+data class Cities(val nameCity: String, val country: String)
+
+object CopyCity {
+    private val city = Cities("Москва", "Российская Федерация")
+    val copyCity = city.copy()
 }
