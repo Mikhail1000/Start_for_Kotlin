@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         val buttonSettings: Button = findViewById(R.id.button_settings)
         buttonSettings.setOnClickListener {
-            val message: String = "Город " + listCities.get(0).nameCity + " находится в стране " + listCities.get(0).country
+            val message: String = "Город " + listCities[0].nameCity + " находится в стране " + listCities[0].country
             textView.text = message
             println(CopyCity.copyCity)
             for (city in listCities){
